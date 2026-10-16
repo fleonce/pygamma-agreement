@@ -195,11 +195,11 @@ def pygamma_cmd():
                 for category in continuum.categories:
                     print(f"gamma-k('{category}')={gamma.gamma_k(category)}")
         else:
-            result_list.append(gamma.gamma)
+            result_list.append(float(gamma.gamma))
             if args.gamma_cat:
-                result_list.append(gamma.gamma_cat)
+                result_list.append(float(gamma.gamma_cat))
             if args.gamma_k:
-                result_list.append({category: gamma.gamma_k(category) for category in continuum.categories})
+                result_list.append({category: float(gamma.gamma_k(category)) for category in continuum.categories})
         results.append(result_list)
 
     labels = ['filename', 'gamma']
